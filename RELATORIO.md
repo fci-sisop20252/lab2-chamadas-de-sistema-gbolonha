@@ -146,7 +146,8 @@ O_WRONLY, para abrir o arquivo para escrita, O_CREAT para criar o arquivo caso n
 **3. O número de reads e writes é igual? Por quê?**
 
 ```
-Não são iguais, tendo 14 writes e 8 reads. Um único read pode resultar em múltiplas reads dependendo de como o kernel gerencia os buffers.
+Usando os comandos indicados pelo professor, aparecem 14 chamadas de write e 8 chamadas de read no trace. Porém, dentro do loop de cópia dos conteúdos, o número de operações é igual, já que para cada leitura feita no arquivo de origem ocorre uma escrita correspondente no arquivo de destino.  
+A diferença total vem dos writes adicionais usados pelos printf() para exibir mensagens no terminal.
 ```
 
 **4. Como você saberia se o disco ficou cheio?**
